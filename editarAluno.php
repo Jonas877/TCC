@@ -7,7 +7,7 @@
         isset($_POST['senha']) && !empty($_POST['senha'])) {
 
             include 'conexao.php';
-            $sql = "UPDATE Usuarios SET login = '$_POST[login]', senha = '$_POST[senha]' WHERE Id = $_POST[Id]";
+            $sql = "UPDATE Usuario SET login = '$_POST[login]', senha = '$_POST[senha]' WHERE Id = $_POST[Id]";
             $resultado = $conexao->query($sql);
             if ($resultado) {
                 //lógica para mensagem de sucesso
@@ -30,19 +30,19 @@
                 }
             }
             else {
-                header('location: usuarios.php?erro=Nenhum registro encontrado');
+                header('location: aluno.php?erro=Nenhum registro encontrado');
             }
         }
         else {
-           header('location: usuarios.php?erro=Erro do if do resultado');
+           header('location: aluno.php?erro=Erro do if do resultado');
         }
     }
     else {
-        header('location: usuarios.php?erro=Nenhum Id informado');
+        header('location: aluno.php?erro=Nenhum Id informado');
     }
 ?>
 
-<form action="editar_usuarioss.php?Id=<?php echo $id; ?>"method="post">
+<form action="editar_aluno.php?Id=<?php echo $id; ?>"method="post">
     <input name="Id" value="<?php echo $id ?>"/>
     <input name="login" value="<?php echo $login ?>"/>
     <input name="senha" value="<?php echo $senha ?>"/>
