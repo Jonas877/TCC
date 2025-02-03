@@ -4,7 +4,8 @@ CREATE TABLE usuario (
 	matricula INT,
 	curso TEXT(65535),
 	telefone VARCHAR(20),
-	email VARCHAR(50)
+	email VARCHAR(50),
+	ativo VARCHAR(100)
 );
 
 
